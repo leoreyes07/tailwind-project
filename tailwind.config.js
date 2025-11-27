@@ -1,8 +1,34 @@
-/**@type {import('tailwindcss').Config} */
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./index.html"],
+    content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                primary: {
+                    light: '#6028D9',
+                    DEFAULT: '#4C1D95',
+                    dark: '#2E1065'
+                },
+                secondary: {
+                    light: '#34D399',
+                    DEFAULT: '#059669',
+                    dark: '#065F46'
+                },
+            },
+            fontFamily: {
+                sans: ['inter', 'sans-serif'],
+                heading: ['Ununtu', 'sans-serif']
+            },
+            spacing: {
+                '72': '18rem'
+            },
+            fontSize: {
+                xxs: '0.65rem'
+            }
+        },
     },
-    plugins: [],
-}
+    plugins: [
+        require('@tailwindcss/forms'),
+        require('@tailwindcss/aspect-ratio'),
+    ]
+};
